@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MarsReach Robotics</title>
+    <meta name="description" content="MarsReach Robotics – Learning Beyond Limits." />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              space: {900: '#0B132B',800: '#14213D',700: '#1D2B64'},
+              mars: {500: '#E03C31',400: '#FF6B57'},
+              metal: {300: '#C9D1D9',500: '#8B97A6'}
+            },
+            boxShadow: {soft: '0 10px 30px rgba(0,0,0,0.15)'}
+          }
+        }
+      }
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .stars{background-image:radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,.35),transparent 60%),radial-gradient(1.5px 1.5px at 70% 20%,rgba(255,255,255,.25),transparent 60%),radial-gradient(1.2px 1.2px at 35% 75%,rgba(255,255,255,.2),transparent 60%)}
+    </style>
+  </head>
+  <body class="bg-space-900 text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const IconOrbitArm = ({ className = '' }) => (
+        <svg className={className} viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#FF6B57"/>
+              <stop offset="100%" stopColor="#E03C31"/>
+            </linearGradient>
+          </defs>
+          <rect x="10" y="96" width="44" height="12" rx="3" fill="#8B97A6"/>
+          <circle cx="58" cy="96" r="6" fill="#C9D1D9"/>
+          <rect x="54" y="70" width="8" height="28" rx="4" fill="#A9B4C2"/>
+          <circle cx="58" cy="68" r="5" fill="#C9D1D9"/>
+          <rect x="62" y="40" width="8" height="30" rx="4" transform="rotate(-25 62 40)" fill="#D4DAE2"/>
+          <circle cx="88" cy="30" r="5" fill="#D4DAE2"/>
+          <rect x="84" y="24" width="4" height="12" rx="2" transform="rotate(-25 84 24)" fill="#D4DAE2"/>
+          <circle cx="100" cy="22" r="14" fill="url(#g1)"/>
+          <ellipse cx="100" cy="22" rx="24" ry="10" stroke="#FF6B57" strokeWidth="1.5" opacity="0.9"/>
+          <ellipse cx="100" cy="22" rx="30" ry="13" stroke="#FF6B57" strokeWidth="1" opacity="0.6"/>
+        </svg>
+      );
+
+      const Section = ({ id, title, children }) => (
+        <section id={id} className="max-w-6xl mx-auto px-6 py-16">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-6">{title}</h2>
+          <div className="text-metal-300 leading-relaxed text-lg">{children}</div>
+        </section>
+      );
+
+      const Card = ({ title, children }) => (
+        <div className="bg-space-800/60 border border-white/10 rounded-2xl p-6 shadow-soft">
+          <h3 className="text-xl font-bold mb-3">{title}</h3>
+          <div className="text-metal-300">{children}</div>
+        </div>
+      );
+
+      function MarsReachSite() {
+        const year = new Date().getFullYear();
+        return (
+          <div>
+            <header className="sticky top-0 z-50 bg-space-900/80 backdrop-blur border-b border-white/10">
+              <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <IconOrbitArm className="w-9 h-9" />
+                  <div>
+                    <div className="text-sm tracking-widest text-metal-300">MARSREACH</div>
+                    <div className="text-lg font-extrabold -mt-1">ROBOTICS</div>
+                  </div>
+                </div>
+                <div className="hidden md:flex items-center gap-6 text-metal-300">
+                  <a href="#about" className="hover:text-white">About</a>
+                  <a href="#programs" className="hover:text-white">Programs</a>
+                  <a href="#enroll" className="hover:text-white">Enroll</a>
+                  <a href="#contact" className="hover:text-white">Contact</a>
+                </div>
+                <a href="#enroll" className="ml-4 inline-flex items-center gap-2 bg-mars-500 text-white px-4 py-2 rounded-xl font-semibold shadow-soft hover:translate-y-[-1px] transition">Join Waitlist</a>
+              </nav>
+            </header>
+
+            <section className="relative overflow-hidden">
+              <div className="absolute inset-0 stars opacity-30"></div>
+              <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1 text-sm text-metal-300 mb-5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-mars-500"></span>
+                    Pre‑Launch Announcement
+                  </div>
+                  <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Hands‑on Robotics for <span className="text-mars-400">Curious Minds</span></h1>
+                  <p className="mt-4 text-lg text-metal-300 max-w-xl">MarsReach Robotics is preparing to launch programs designed to help youth explore technology and innovation through hands‑on projects. Stay tuned for updates.</p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a href="#enroll" className="bg-white text-space-900 font-semibold px-5 py-3 rounded-xl shadow-soft">Notify Me</a>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-mars-500 blur-3xl opacity-30"></div>
+                  <div className="bg-space-800/60 border border-white/10 rounded-3xl p-6 md:p-8 shadow-soft">
+                    <div className="flex items-center gap-4 mb-4">
+                      <IconOrbitArm className="w-12 h-12" />
+                      <div>
+                        <div className="text-sm text-metal-300">Coming Soon</div>
+                        <div className="text-xl font-bold">Robotics Learning Tracks</div>
+                      </div>
+                    </div>
+                    <ul className="grid gap-3 list-disc list-inside text-metal-300">
+                      <li>Project‑based hands‑on learning</li>
+                      <li>Team collaboration & creativity</li>
+                      <li>STEM exploration for ages 11–16</li>
+                    </ul>
+                    <a href="#enroll" className="mt-5 inline-block bg-mars-500 text-white font-semibold px-5 py-3 rounded-xl">Join Waitlist</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <Section id="about" title="About MarsReach Robotics">
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card title="Our Mission">We aim to inspire and equip students with technical and creative skills that will shape the world of tomorrow. (Official launch coming soon.)</Card>
+                <Card title="What We Teach">Foundations of robotics, electronics, and programming through interactive and practical experiences.</Card>
+                <Card title="Who It’s For">Designed for young learners curious about science, engineering, and problem solving.</Card>
+              </div>
+            </Section>
+
+            <Section id="programs" title="Programs (Coming Soon)">
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card title="Introductory Robotics">A beginner‑friendly course introducing the fundamentals of robotics and automation concepts.</Card>
+                <Card title="Advanced Exploration Tracks">Future programs will include AI, sensors, and creative design projects.</Card>
+              </div>
+            </Section>
+
+            <Section id="enroll" title="Stay Informed">
+              <div className="bg-space-800/60 border border-white/10 rounded-2xl p-6">
+                <p className="mb-4">Sign up to receive updates when MarsReach Robotics officially launches. We respect your privacy and will only contact you with important news.</p>
+                <form action="mailto:info@marsreach.com" method="post" encType="text/plain" className="grid md:grid-cols-3 gap-4">
+                  <input required placeholder="Your Name" className="bg-space-900/70 border border-white/10 rounded-xl px-4 py-3" />
+                  <input required type="email" placeholder="Email" className="bg-space-900/70 border border-white/10 rounded-xl px-4 py-3" />
+                  <textarea placeholder="Comments / Questions" className="md:col-span-3 bg-space-900/70 border border-white/10 rounded-xl px-4 py-3" rows="4"></textarea>
+                  <button className="bg-mars-500 hover:bg-mars-400 transition text-white font-semibold px-5 py-3 rounded-xl">Submit</button>
+                </form>
+              </div>
+            </Section>
+
+            <Section id="contact" title="Contact">
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card title="Email"><a href="mailto:info@marsreach.com" className="underline">info@marsreach.com</a></Card>
+                <Card title="Status">MarsReach Robotics is currently in its pre‑launch phase. Check back soon for our official program dates.</Card>
+              </div>
+            </Section>
+
+            <footer className="border-t border-white/10">
+              <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-metal-300">
+                <div className="flex items-center gap-3">
+                  <IconOrbitArm className="w-6 h-6" />
+                  <span>© {year} MarsReach Robotics</span>
+                </div>
+                <div>MarsReach Robotics is a trade name of MarsReach LLC</div>
+              </div>
+            </footer>
+          </div>
+        );
+      }
+
+      const root = document.getElementById('root');
+      ReactDOM.createRoot(root).render(<MarsReachSite/>);
+    </script>
+  </body>
+</html>
