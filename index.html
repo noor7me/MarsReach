@@ -1,33 +1,66 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MarsReach Robotics</title>
-    <meta name="description" content="MarsReach Robotics – Learning Beyond Limits." />
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              space: {900: '#0B132B',800: '#14213D',700: '#1D2B64'},
-              mars: {500: '#E03C31',400: '#FF6B57'},
-              metal: {300: '#C9D1D9',500: '#8B97A6'}
-            },
-            boxShadow: {soft: '0 10px 30px rgba(0,0,0,0.15)'}
-          }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ Primary Meta Information -->
+  <title>MarsReach Robotics – Hands-on STEM Learning for Young Innovators</title>
+  <meta name="title" content="MarsReach Robotics – Hands-on STEM Learning for Young Innovators">
+  <meta name="description" content="MarsReach Robotics inspires the next generation of creators through hands-on robotics, engineering, and STEM learning experiences in Puyallup, WA. Join our pre-launch program today!">
+  <meta name="keywords" content="MarsReach Robotics, robotics for kids, STEM education, Puyallup robotics, youth robotics, engineering for students, robotics lab, coding, hands-on learning, MarsReach, Washington STEM, robotics camp">
+  <meta name="author" content="MarsReach Robotics">
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- ✅ Open Graph / Facebook Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marsreach.com/">
+  <meta property="og:title" content="MarsReach Robotics – Hands-on STEM Learning for Young Innovators">
+  <meta property="og:description" content="Empowering students to explore robotics, coding, and engineering through hands-on projects in Puyallup, WA.">
+  <meta property="og:image" content="https://marsreach.com/logo.png">
+
+  <!-- ✅ Twitter Card Preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://marsreach.com/">
+  <meta property="twitter:title" content="MarsReach Robotics – Hands-on STEM Learning for Young Innovators">
+  <meta property="twitter:description" content="Empowering students to explore robotics, coding, and engineering through hands-on projects in Puyallup, WA.">
+  <meta property="twitter:image" content="https://marsreach.com/logo.png">
+
+  <!-- ✅ Theme & Color -->
+  <meta name="theme-color" content="#E03C31">
+  <meta name="robots" content="index, follow">
+
+  <!-- ✅ Tailwind & Babel Setup -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            space: {900: '#0B132B',800: '#14213D',700: '#1D2B64'},
+            mars: {500: '#E03C31',400: '#FF6B57'},
+            metal: {300: '#C9D1D9',500: '#8B97A6'}
+          },
+          boxShadow: {soft: '0 10px 30px rgba(0,0,0,0.15)'}
         }
       }
-    </script>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <style>
-      .stars{background-image:radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,.35),transparent 60%),radial-gradient(1.5px 1.5px at 70% 20%,rgba(255,255,255,.25),transparent 60%),radial-gradient(1.2px 1.2px at 35% 75%,rgba(255,255,255,.2),transparent 60%)}
-    </style>
-  </head>
+    }
+  </script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- ✅ Background Styling -->
+  <style>
+    .stars {
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.35), transparent 60%),
+        radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,.25), transparent 60%),
+        radial-gradient(1.2px 1.2px at 35% 75%, rgba(255,255,255,.2), transparent 60%);
+    }
+  </style>
+</head>
+
   <body class="bg-space-900 text-white">
     <div id="root"></div>
 
