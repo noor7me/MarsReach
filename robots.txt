@@ -1,0 +1,6 @@
+# MarsReach Robotics - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://marsreach.com/sitemap.xml
