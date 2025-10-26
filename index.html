@@ -137,6 +137,16 @@
           <div className="text-metal-300">{children}</div>
         </div>
       );
+      const LogoWordmark = ({ className = "" }) => (
+        <div className={`flex items-center gap-2 ${className}`}>
+          {/* Icon – flat colors, no glow, no background */}
+          <IconOrbitArm className="w-8 h-8" />
+          <div className="leading-tight">
+            <div className="tracking-widest text-metal-300 text-sm">MARSREACH</div>
+            <div className="text-white font-extrabold">ROBOTICS</div>
+          </div>
+        </div>
+      );
 
       function MarsReachSite() {
         const year = new Date().getFullYear();
@@ -144,13 +154,10 @@
           <div>
             <header className="sticky top-0 z-50 bg-space-900/80 backdrop-blur border-b border-white/10">
               <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img src="/logo.png" alt="MarsReach Robotics logo" className="w-10 h-10 object-contain" />
-                  <div>
-                    <div className="text-sm tracking-widest text-metal-300">MARSREACH</div>
-                    <div className="text-lg font-extrabold -mt-1">ROBOTICS</div>
-                  </div>
-                </div>
+              <div className="flex items-center gap-3">
+                <LogoWordmark />
+              </div>
+
                 <div className="hidden md:flex items-center gap-6 text-metal-300">
                   <a href="#about" className="hover:text-white">About</a>
                   <a href="#programs" className="hover:text-white">Programs</a>
@@ -169,11 +176,7 @@
                     <span className="w-2.5 h-2.5 rounded-full bg-mars-500"></span>
                     Pre‑Launch Announcement
                   </div>
-                  <img
-                    src="/logo.png"
-                    alt="MarsReach Robotics"
-                    className="w-20 h-20 mb-4 object-contain"
-                  />                  
+                  <LogoWordmark className="scale-125 mb-4" />
                   <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Hands‑on Robotics for <span className="text-mars-400">Curious Minds</span></h1>
                   <p className="mt-4 text-lg text-metal-300 max-w-xl">MarsReach Robotics is preparing to launch programs designed to help youth explore technology and innovation through hands‑on projects. Stay tuned for updates.</p>
                   <div className="mt-6 flex flex-wrap gap-3">
